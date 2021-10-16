@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 50
+ void selectionsort(int array[], int size) {
+ 	
+ 	int i, j;
+ 	int minindex;
+ 
+   	for(i=0; i<size; i++) {
+   		minindex=i;
+ 		for(j=i; j<size;j++) {
+ 			if(array[j]< array[minindex]) {
+ 				minindex=j;
+			 }
+		 }
+		 int temp=array[i];
+		 array[i]=array[minindex];
+		 array[minindex]=temp;
+	 }
+ }
+
+int main(int argc, char *argv[]) {
+	
+		int array[MAX], size;
+	int i;
+	printf("kac elemanli olacak?");
+	scanf("%d",&size);
+	 
+	 for(i=0;i<size;i++) {
+	 	scanf("%d", &array[i]);
+	 }
+	selectionsort(array,size);
+	
+	 for (i=0; i<size; i++) {
+	 	printf("%d ", array[i]);
+	 }
+	return 0;
+	
+}
